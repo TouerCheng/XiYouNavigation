@@ -21,3 +21,38 @@ printf("                |  |         |      \n");
 printf("                |  |        西门  \n");
 return;
 }
+
+//显示所有图点信息
+void print2(adj *q)
+{
+	int i,j;
+	int m;
+	//对齐输出
+	for(i=0;i<=q->diannum;i++)
+	{
+		printf("%s",q->dian[i].name);
+		m=strlen(q->dian[i].name);
+		m=m/3;
+		for(j=6-m;j>0;j--)
+		{
+			printf("  ");
+		}	
+		printf("%s\n",q->dian[i].shuoming);
+	}
+}
+
+//给站点名字输出信息
+void print3(adj *q,char name[])
+{
+	int m;
+	m=change1(q,name);
+	if(m==-1)
+	{
+		printf("不存在这个地点\n");
+	}
+	else
+	{
+		printf("%s",q->dian[m].shuoming);
+	}
+}
+
