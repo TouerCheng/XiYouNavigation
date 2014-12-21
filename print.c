@@ -1,4 +1,15 @@
-
+void printmain()
+{
+	printf("         输入编号查询信息       \n");
+	printf("      0.查询单个景点信息\n");
+	printf("      1.查询所有景点及其信息  \n");
+	printf("      2.查询校园图景\n");
+	printf("      3.查询俩景点之间点最短路径                 \n");
+	printf("      4.查询多景点之间的最佳访问路径\n");
+	printf("      5.查询俩景点之间的所有访问路径\n");
+	printf("      6.广度优先搜索校园全部景点        \n");
+	printf("      7.深度优先搜索校园全部景点\n");
+}
 void print1(void)
 {
 printf("                |  |                 超市 \n");
@@ -28,7 +39,7 @@ void print2(adj *q)
 	int i,j;
 	int m;
 	//对齐输出
-	for(i=0;i<=q->diannum;i++)
+	for(i=1;i<=q->diannum;i++)
 	{
 		printf("%s",q->dian[i].name);
 		m=strlen(q->dian[i].name);
@@ -52,7 +63,64 @@ void print3(adj *q,char name[])
 	}
 	else
 	{
-		printf("%s",q->dian[m].shuoming);
+		printf("%s  %s\n",q->dian[m].name,q->dian[m].shuoming);
 	}
 }
+
+//给编号输出信息
+void print4(adj *q,int n)
+{
+	if(n<1||n>(q->diannum))
+	{
+		printf("不存在这个编号\n");
+	}
+	else
+	{
+	        printf("%s %s\n",q->dian[n].name,q->dian[n].shuoming);
+	}
+}
+
+
+//所有站点编号输出
+
+void print5(adj *q)
+{
+	
+	int i,j;
+	int m;
+	
+	//对齐输出
+	for(i=1;i<=q->diannum;i++)
+        {
+                printf("%d%s",i,q->dian[i].name);
+                m=strlen(q->dian[i].name);
+                m=m/3;
+                for(j=6-m;j>0;j--)
+                {
+                        printf("  ");
+                }
+		if(i>=10)	printf("\b");
+		if(i%5==0)	printf("\n");
+
+        }
+
+		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

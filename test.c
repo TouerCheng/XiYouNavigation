@@ -1,5 +1,6 @@
 #include "1.c"
 #include "print.c"
+#include "2.c"
 main()
 {
 	char a[20];
@@ -8,7 +9,6 @@ main()
 	adj *p=&q;
 	scanffile(p);
 	print2(p);
-	scanf("%s",a);
-	print3(p,a);
-
+	print5(p);
+	hanshu0(p);
 }
