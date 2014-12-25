@@ -124,7 +124,26 @@ void Dijkstra(adj *a, int v, int *dist, int *prev)
      }
 }
 
-
+//深度遍历
+void DFS(adj *q,int i,int vist[])
+{
+	static tmp=0;
+	int j;
+	vist[i]=1;
+	printf("%d%s ",i,q->dian[i].name);
+	tmp++;
+	if(tmp%5==0)
+	{
+		printf("\n");
+	}
+	for(j=1;j<=q->diannum;j++)
+	{
+		if(q->xian[i][j]<maxlong && !vist[j])
+		{
+			DFS(q,j,vist);
+		}
+	}
+}
 
 
 

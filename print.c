@@ -9,6 +9,9 @@ void printmain()
 	printf("      5.查询俩景点之间的所有访问路径\n");
 	printf("      6.广度优先搜索校园全部景点        \n");
 	printf("      7.深度优先搜索校园全部景点\n");
+	printf("      8.添加（删除）景点或者线路\n");
+	printf("      9.退出\n");
+	printf("      请输入：");
 }
 void print1(void)
 {
